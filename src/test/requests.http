@@ -1,0 +1,40 @@
+### List issues
+GET http://localhost:8080/api/issues
+
+### Create issue
+POST http://localhost:8080/api/issues
+Content-Type: application/json
+
+{
+    "title": "Write a post about REST"
+}
+
+### List actions
+GET http://localhost:8080/api/issues/1/actions
+
+
+### Start
+POST http://localhost:8080/api/issues/1/actions
+Content-Type: application/json
+
+{
+    "type": "START_WORK"
+}
+
+### Complete
+POST http://localhost:8080/api/issues/1/actions
+Content-Type: application/json
+
+{
+    "type": "COMPLETE_WORK"
+}
+
+### Patch
+PATCH http://localhost:8080/api/issues/1
+Content-Type: application/json-patch+json
+
+[{
+    "op": "replace",
+    "path": "/title",
+    "value": "Write a post about PATCH"
+}]
